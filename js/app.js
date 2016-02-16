@@ -1,7 +1,7 @@
 var MOV_X = 101;
 var MOV_Y = 101;
 var ICON = 'images/char-boy.png';
-    
+
 // Enemies our player must avoid
 var Enemy = function(){
     // Variables applied to each of our instances go here,
@@ -10,7 +10,7 @@ var Enemy = function(){
     this.y = 50;
     this.ancho = 50;
     this.alto = 85;
-    this.velocidad = 2;
+    this.velocidad = Math.random()*5;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -41,7 +41,7 @@ Enemy.prototype.update = function(dt) {
         var locacion = [50 , 140 , 230];
         this.x = 0;
         this.y = locacion[generarNumeroRan()];
-        this.velocidad = 2;
+        this.velocidad = Math.random()*5;
     }
     if(this.colisiona(player)){
         player.reinicio();
@@ -63,6 +63,7 @@ var Player = function(){
     this.y = 424;
 
 };
+
 function cambiarPersonaje(personaje){
     switch(personaje){
         case '1':
@@ -95,7 +96,7 @@ Enemy.prototype.colisiona = function(object) {
         this.y < object.y + object.alto && this.y + this.alto > object.y);    
 };
 
-Player.prototype.update = function(dt) {
+Player.prototype.update = function() {
     if(player.y < 20){
         alert("Usted a ganado el juego!! Ok para continuar");
         player.reinicio();

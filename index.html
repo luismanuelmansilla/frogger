@@ -6,13 +6,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <h1>Frogger</h1>
+    
+    <script>   
+    var nombre = prompt("Introduzca su nombre:");
+    while(nombre == 0){
+        alert("Error! No puede dejar el campo vacio!");
+        var nombre = prompt("Introduzca su nombre:");
+    }
+
+    </script>
+    
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>   
+    
     <h4>Selecciona tu personaje:</h4>
-    <br>
     <button onclick = "cambiarPersonaje('1')"><img src = "images/char-boy.png"></button>
-    < br>
     <button onclick = "cambiarPersonaje('2')"><img src = "images/char-cat-girl.png"></button>
     <button onclick = "cambiarPersonaje('3')"><img src = "images/char-horn-girl.png"></button>
     <button onclick = "cambiarPersonaje('4')"><img src = "images/char-pink-girl.png"></button>

@@ -1,6 +1,7 @@
 var MOV_X = 101;
 var MOV_Y = 101;
 var ICON = 'images/char-boy.png';
+var NOMBRE;
 
 // Enemies our player must avoid
 var Enemy = function(){
@@ -64,7 +65,8 @@ var Player = function(){
 
 };
 
-function cambiarPersonaje(personaje){
+function cambiarPersonaje(personaje,nombre){
+    NOMBRE = nombre;
     switch(personaje){
         case '1':
             ICON = 'images/char-boy.png';
@@ -98,7 +100,7 @@ Enemy.prototype.colisiona = function(object) {
 
 Player.prototype.update = function() {
     if(player.y < 20){
-        alert("Usted a ganado el juego!! Ok para continuar");
+        alert(NOMBRE + ", usted a ganado el juego!! Ok para continuar");
         player.reinicio();
     }
 };
